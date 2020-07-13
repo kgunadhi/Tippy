@@ -19,20 +19,14 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
 - (IBAction)onTap:(id)sender {
-    NSLog(@"Hello");
     [self.view endEditing:YES];
 }
 
 - (IBAction)onEdit:(id)sender {
-    double bill = [self.billField.text doubleValue];
+    const double bill = [self.billField.text doubleValue];
     
-    NSArray *percentages = @[@(0.15), @(0.18), @(0.2)];
+    NSArray *const percentages = @[@(0.15), @(0.18), @(0.2)];
     
     double tipPercentage = [percentages[self.tipControl.selectedSegmentIndex] doubleValue];
     double tip = tipPercentage * bill;
